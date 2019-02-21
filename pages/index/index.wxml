@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" id='infoBtn'>
+  获取用户信息
+</button>
+<button open-type="getUserInfo" lang="zh_CN" bindtap="applyJoinGroup" id='infoBtn'>
+  申请加入群组
+</button>
+<live-player></live-player>
+  <view class="msgs-wrapper">
+    <view class="msgs" wx:for="{{msgs}}">
+      <text class="msg-item"><text class="nickname">{{item.fromAccountNick}}</text> : {{item.content}}</text>
+    </view>
+  </view>
+
+  <view class="input-section">
+      <input value="{{msgContent}}"  placeholder="" bindconfirm="bindConfirm" />
+      <button class="love" bindtap="bindTap"></button>
+  </view>
+</view>
